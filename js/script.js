@@ -22,6 +22,42 @@ __        ___           _   _                  ___
 );
 
 /* =========================================
+   LOAD PAGE CONTENT FROM SEPARATE FILES
+   Keeps About/Experience/Projects text in
+   their own HTML files under content/ so
+   they're easy to edit without touching
+   index.html.
+   NOTE: only works when served over http(s) —
+   e.g. GitHub Pages or a local dev server.
+   Opening index.html directly (file://) will
+   not load this due to browser security rules.
+   ========================================= */
+function loadContent(targetId, filePath) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+            return response.text();
+        })
+        .then(html => {
+            target.innerHTML = html;
+        })
+        .catch(error => {
+            console.error(error);
+            // Fallback so the section isn't left blank if the fetch fails
+            target.innerHTML = '<p>Content could not be loaded.</p>';
+        });
+}
+
+function loadAllContent() {
+    loadContent('about-content', 'content/about.html');
+    loadContent('experience-content', 'content/experience.html');
+    loadContent('projects-content', 'content/projects.html');
+}
+
+/* =========================================
    STICKY NAVIGATION
    Handles the scroll-spy underline slider and
    the nav bar switching to fixed position.
@@ -186,6 +222,7 @@ function initScrollReveal() {
    INITIALIZE EVERYTHING ONCE DOM IS READY
    ========================================= */
 $(document).ready(function() {
+    loadAllContent();
     new StickyNavigation();
     initThemeToggle();
     initMobileMenu();
