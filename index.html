@@ -6,21 +6,23 @@
     <title>Justin Marc | Portfolio</title>
     <meta name="description" content="Justin Marc &mdash; Web Developer &amp; UX Enthusiast. Front-end web and Android app portfolio.">
 
-    <!-- Fonts, FontAwesome, and jQuery -->
+    <!-- mga external na fonts, icons, at jQuery library na ginagamit ko dito, taken from CDN para di ko na kailangan i-download manually -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Local stylesheet -->
+    <!-- yung sarili kong stylesheet, nasa css folder -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div>
+        <!-- HOME section - una itong makikita pag pasok sa site -->
         <section class="et-hero-tabs" id="tab-home">
             <h1 class="reveal active">Justin Marc</h1>
             <h3 class="reveal active" style="transition-delay: 0.2s;">Web Developer &amp; UX Enthusiast</h3>
 
+            <!-- navigation bar na naka-sticky sa baba, may scroll spy logic sa script.js -->
             <div class="et-hero-tabs-container">
                 <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
                     <i class="fa-solid fa-bars"></i>
@@ -34,6 +36,7 @@
                     <a class="et-hero-tab" href="#tab-contact">Contact</a>
                 </div>
 
+                <!-- yung underline slider na gumagalaw pag nag-scroll, JS ang naghahandle nito -->
                 <span class="et-hero-tab-slider"></span>
 
                 <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
@@ -43,31 +46,35 @@
         </section>
 
         <main class="et-main">
+            <!-- ABOUT section - yung laman nito galing sa content/about.html, dinadala lang dito via JS fetch() -->
             <section class="et-slide" id="tab-about">
                 <h1 class="reveal">A little bit about me</h1>
 
                 <div id="about-content" class="content-block reveal" style="transition-delay: 0.1s;">
-                    <!-- Content loaded dynamically from content/about.html -->
+                    <!-- dito ilalagay ni JS yung laman galing sa content/about.html, kaya blangko muna dito -->
                 </div>
             </section>
 
+            <!-- EXPERIENCE section - kagaya din ng About, galing sa hiwalay na file (content/experience.html) -->
             <section class="et-slide" id="tab-experience">
                 <h1 class="reveal">Experience</h1>
 
                 <div id="experience-content" class="content-block reveal" style="transition-delay: 0.1s;">
-                    <!-- Content loaded dynamically from content/experience.html -->
+                    <!-- laman galing sa content/experience.html -->
                 </div>
             </section>
 
+            <!-- PROJECTS section - yung mga ginawa kong project, laman galing sa content/projects.html -->
             <section class="et-slide" id="tab-projects">
                 <h1 class="reveal">Projects</h1>
                 <h3 class="reveal" style="transition-delay: 0.1s;">A few things I've built while learning and experimenting.</h3>
 
                 <div id="projects-content" class="project-grid reveal" style="transition-delay: 0.2s;">
-                    <!-- Content loaded dynamically from content/projects.html -->
+                    <!-- laman galing sa content/projects.html -->
                 </div>
             </section>
 
+            <!-- CONTACT section - dito puwede ako i-contact ng mga makakakita ng site ko -->
             <section class="et-slide" id="tab-contact">
                 <h1 class="reveal">Contact</h1>
                 <h3 class="reveal" style="transition-delay: 0.1s;">Let's connect &mdash; I'm always happy to chat.</h3>
@@ -81,7 +88,8 @@
                     <a class="contact-link" href="https://www.linkedin.com/in/jm-almario/" target="_blank" rel="noopener noreferrer" style="margin-top: 0;">
                         <i class="fa-brands fa-linkedin"></i>&nbsp; LinkedIn
                     </a>
-                    <a class="contact-link" href="assets/resume.jpeg" download style="margin-top: 0;">
+                    <!-- resume ko as image (JPEG) na, dati PDF pero pinalitan ko na -->
+                    <a class="contact-link" href="assets/resume.jpg" download style="margin-top: 0;">
                         <i class="fa-solid fa-file-arrow-down"></i>&nbsp; Resume
                     </a>
                 </div>
@@ -95,7 +103,7 @@
         </div>
     </footer>
 
-    <!-- Local script (must load after the DOM above and after jQuery) -->
+    <!-- script ko, dapat andito sa dulo para naka-load na muna yung buong page bago tumakbo yung JS -->
     <script src="js/script.js"></script>
 
 </body>
