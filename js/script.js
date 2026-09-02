@@ -1,8 +1,17 @@
 /* =========================================
-   CONSOLE EASTER EGG
-   Only visible to people who open DevTools
-   Console — not in View Source or Inspect
-   Element, unlike an HTML comment.
+  __        ___           _   _                  ___
+\\ \\      / / |__   __ _| |_( )___   _   _ _ __|__ \\
+ \\ \\ /\\ / /| '_ \\ / _\` | __|// __| | | | | '_ \\ / /
+  \\ V  V / | | | | (_| | |_  \\__ \\ | |_| | |_) |_|
+   \\_/\\_/  |_| |_|\\__,_|\\__| |___/  \\__,_| .__/(_)
+                                         |_|
+
+        Checking my code? Don't be shy, I don't bite and I'd love to chat,
+        whether it's about code, design, manga, mobile games,
+        manhwa, or anything in between.
+
+        - JWebcell (Justin Marc)
+`
    ========================================= */
 console.log(
 `
